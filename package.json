@@ -1,0 +1,21 @@
+{
+  "name": "dynamic-theme",
+  "version": "0.1.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "grunt test"
+  },
+  "author": "Bruno Queiros",
+  "license": "MIT",
+  "devDependencies": {
+    "babelify": "^6.1.2",
+    "grunt": "^0.4.5",
+    "grunt-browserify": "^3.8.0",
+    "grunt-cli": "^0.1.13",
+    "grunt-contrib-jshint": "^0.11.2",
+    "grunt-contrib-watch": "^0.6.1",
+    "grunt-jscs": "^1.8.0",
+    "load-grunt-tasks": "^3.2.0"
+  }
+}

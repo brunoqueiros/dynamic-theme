@@ -1,0 +1,32 @@
+{
+  "esnext": true,
+  "maximumLineLength": 120,
+  "disallowTrailingWhitespace": true,
+  "requireParenthesesAroundIIFE": true,
+  "requireCapitalizedConstructors": true,
+  "validateIndentation": 2,
+  "validateQuoteMarks": "'",
+  "validateParameterSeparator": ", ",
+  "disallowEmptyBlocks": true,
+  "disallowMultipleLineBreaks": true,
+  "disallowMultipleSpaces": true,
+  "disallowNewlineBeforeBlockStatements": true,
+  "disallowPaddingNewlinesInBlocks": true,
+  "disallowTrailingWhitespace": true,
+  "disallowMultipleVarDecl": true,
+  "requireCommaBeforeLineBreak": true,
+  "requireLineBreakAfterVariableAssignment": true,
+  "requirePaddingNewLinesAfterUseStrict": true,
+  "requireSemicolons": true,
+  "requireCurlyBraces": [
+    "if",
+    "else",
+    "for",
+    "while",
+    "do",
+    "try",
+    "catch",
+    "case",
+    "default"
+  ]
+}
