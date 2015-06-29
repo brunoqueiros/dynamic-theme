@@ -21,7 +21,7 @@
     init: function () {
       console.log('init');
       if (this.checkOptions() && this.checkDependencies()) {
-        this.getDominantColor();
+        var color = this.getDominantColor();
       }
     },
 
@@ -44,7 +44,7 @@
     checkDependencies: function () {
       var isValid = true;
 
-      if (typeof ColorThief) {
+      if (typeof ColorThief === 'undefined') {
         isValid = false;
         console.error('Dependencies missing: ColorThief');
       }
