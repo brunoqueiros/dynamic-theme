@@ -19,10 +19,11 @@
 
   Plugin.prototype = {
     init: function () {
-      console.log('init');
       if (this.checkOptions() && this.checkDependencies()) {
         var color = this.getDominantColor();
         color = this.convertColor(color);
+
+        this.updateMetaTag(color);
       }
     },
 
@@ -65,6 +66,10 @@
 
     convertColor: function (color) {
       return 'rgb(' + color[0] + ', ' + color[1] + ', ' + color[2] + ')';
+    },
+
+    updateMetaTag: function (color) {
+      $('meta[name="theme-color"]').attr('content', color);
     }
   };
 
