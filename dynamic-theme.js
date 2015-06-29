@@ -30,7 +30,7 @@
     checkOptions: function () {
       var isValid = true;
 
-      if (!this.isAValidImageSelector(this.options.imageSelector)) {
+      if (!this.isAValidImageSelector()) {
         isValid = false;
         console.error('Inform a valid selector, must be a jQuery object');
       }
@@ -54,14 +54,14 @@
       return isValid;
     },
 
-    isAValidImageSelector: function (selector) {
-      return selector !== undefined && selector instanceof jQuery && selector.length > 0;
+    isAValidImageSelector: function () {
+      return $(this.element) !== undefined && $(this.element) instanceof jQuery && $(this.element).length === 1;
     },
 
     getDominantColor: function() {
       var colorThief = new ColorThief();
 
-      return colorThief.getColor(this.options.imageSelector[0], this.options.quality);
+      return colorThief.getColor(this.element, this.options.quality);
     },
 
     convertColor: function (color) {
