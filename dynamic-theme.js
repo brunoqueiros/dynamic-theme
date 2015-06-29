@@ -1,8 +1,10 @@
-;(function (defaults, $, window, document, undefined) {
+;(function ($, window, document, undefined) {
   'use strict';
 
   var pluginName = 'dynamicTheme',
-      defaults = {};
+      defaults = {
+        'quality': 10
+      };
 
   function Plugin(element, options) {
     this.element = element;
@@ -16,7 +18,38 @@
   }
 
   Plugin.prototype = {
-    init: function () {}
+    init: function () {
+      console.log('init');
+      if (this.checkOptions()) {
+        this.getDominantColor();
+      }
+    },
+
+    checkOptions: function () {
+      var isValid = true;
+
+      if (!this.isAValidImageSelector(this.options.imageSelector)) {
+        isValid = false;
+        console.error('Inform a valid selector, must be a jQuery object');
+      }
+
+      if (typeof this.options.quality !== 'number') {
+        isValid = false;
+        console.error('Inform a valid quality param, must be an integer number');
+      }
+
+      return isValid;
+    },
+
+    isAValidImageSelector: function (selector) {
+      return selector !== undefined && selector instanceof jQuery;
+    },
+
+    getDominantColor: function() {
+      var colorThief = new ColorThief();
+
+      // return colorThief.getColor(this.options.imageSelector[0], this.options.quality);
+    }
   };
 
   $.fn[pluginName] = function (options) {
@@ -27,23 +60,3 @@
     });
   };
 })(jQuery, window, document);
-
-
-'use strict';
-
-function DynamicTheme (options) {
-  this.defaults = {
-    'imageSelector': undefined,
-    'quality': 10
-  };
-
-  $.extends(this.defaults, options);
-
-  this.getDominantColor(this.defaults.imageSelector, this.defaults.quality);
-};
-
-DynamicTheme.prototype.getDominantColor = function() {
-  var colorThief = new ColorThief();
-
-  return colorThief.getColor(this.defaults.imageSelector[0], this.defaults.quality);
-};
