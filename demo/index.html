@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="theme-color" content="">
+  <title>Dynamic Theme demo</title>
+</head>
+<body>
+  <img src="1280255.jpeg" alt="" id="img">
+  <div id="test"></div>
+  <script src="../bower_components/jquery/dist/jquery.js"></script>
+  <script src="../bower_components/color-thief/dist/color-thief.min.js"></script>
+  <script src="../dynamic-theme.js"></script>
+  <script>
+    $('#test').dynamicTheme({
+      'imageSelector': $('#img')
+    });
+  </script>
+</body>
+</html>
