@@ -1,0 +1,25 @@
+{
+  "name": "dynamic-theme",
+  "version": "0.1.0",
+  "homepage": "https://github.com/brunoqueiros/dynamic-theme",
+  "authors": [
+    "Bruno Queiros <brunoofq@gmail.com>"
+  ],
+  "description": "Change the theme-color tag dynamically based on a image.",
+  "main": "lib/dynamic-theme.js",
+  "keywords": [
+    "theme-color"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "color-thief": "*",
+    "jquery": "~2.1.4"
+  }
+}
