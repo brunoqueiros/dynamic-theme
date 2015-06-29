@@ -22,6 +22,7 @@
       console.log('init');
       if (this.checkOptions() && this.checkDependencies()) {
         var color = this.getDominantColor();
+        color = this.convertColor(color);
       }
     },
 
@@ -60,6 +61,10 @@
       var colorThief = new ColorThief();
 
       return colorThief.getColor(this.options.imageSelector[0], this.options.quality);
+    },
+
+    convertColor: function (color) {
+      return 'rgb(' + color[0] + ', ' + color[1] + ', ' + color[2] + ')';
     }
   };
 
