@@ -20,7 +20,7 @@
   Plugin.prototype = {
     init: function () {
       console.log('init');
-      if (this.checkOptions()) {
+      if (this.checkOptions() && this.checkDependencies()) {
         this.getDominantColor();
       }
     },
@@ -41,6 +41,17 @@
       return isValid;
     },
 
+    checkDependencies: function () {
+      var isValid = true;
+
+      if (typeof ColorThief) {
+        isValid = false;
+        console.error('Dependencies missing: ColorThief');
+      }
+
+      return isValid;
+    },
+
     isAValidImageSelector: function (selector) {
       return selector !== undefined && selector instanceof jQuery && selector.length > 0;
     },
@@ -48,7 +59,7 @@
     getDominantColor: function() {
       var colorThief = new ColorThief();
 
-      // return colorThief.getColor(this.options.imageSelector[0], this.options.quality);
+      return colorThief.getColor(this.options.imageSelector[0], this.options.quality);
     }
   };
 
