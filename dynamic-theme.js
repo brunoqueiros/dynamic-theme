@@ -42,7 +42,7 @@
     },
 
     isAValidImageSelector: function (selector) {
-      return selector !== undefined && selector instanceof jQuery;
+      return selector !== undefined && selector instanceof jQuery && selector.length > 0;
     },
 
     getDominantColor: function() {
