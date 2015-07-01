@@ -1,8 +1,8 @@
 ;(function ($, window, document, undefined) {
   'use strict';
 
-  var pluginName = 'dynamicTheme',
-      defaults = {
+  var pluginName = 'dynamicTheme';
+  var defaults = {
         'quality': 10
       };
 
